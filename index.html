@@ -6,7 +6,7 @@
         content="EigenBot Distributed Neural Locomotion Controller (D-NLC)">
   <meta name="keywords" content="eigenbot, biorobotics lab, eigenbot dnlc, distributed neural locomotion control, distributed neural control">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bio-inspired Distributed Neural Locomotion Controller (D-NLC) for Robust Locomotion and Emergent Behaviors</title>
+  <title>D-NLC Distributed Neural Locomotion Controller</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -178,7 +178,18 @@
 </section>
 
 <section class="hero teaser">
-  <div class="container is-max-desktop">
+  <!-- Paper video. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Video</h2>
+      <div class="publication-video">
+        <iframe src="https://www.youtube.com/embed/O39SGxDwapY?si=4KJrLbAjMFAfwsXK"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <!--/ Paper video. -->
+  <!-- <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4"
@@ -190,9 +201,55 @@
         portraits.
       </h2>
     </div>
-  </div>
+  </div> -->
 </section>
 
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            To the best of our knowledge, this framework is the first bio-inspired neural controller deployed on a distributed embedded system.
+          </p>
+          <p>
+            With relatively fewer neurons than more complex life forms, insects are still capable of producing astonishing locomotive behaviors, 
+            such as traversing diverse habitats and making rapid gait adaptations after extreme injury or autotomy. 
+            Biologists attribute this to a chain of segmental neuron clusters (ganglia) within insect nervous systems, which act as distributed, 
+            self-organizing sensorimotor control units. Inspired by the neural structure of the <i>Carausius morosus</i>, the common stick insect, 
+            this research introduces the Distributed Neural Locomotion Controller (D-NLC), a modular control framework utilizing local proprioceptive 
+            feedback to modulate joint-level Central Pattern Generator (CPG) signals to produce emergent locomotive behaviors. 
+          </p>
+          <p>
+            We implemented this framework using a modular legged robot with distributed joint-level embedded computing units and assessed its 
+            performance and behavior under various experimental settings. Based on real-world experiments, we observe an overall 31.3% average increase 
+            in curvilinear motion performance under external (terrain) and internal (amputation) perturbation compared to a centralized predefined gait controller. 
+            This difference is statistically significant (P&lt;&lt;0.05) for larger perturbations but not for single-leg amputations. Experiments with 
+            perturbation-induced leg stance duration and leg-phase-difference analysis further validated our hypothesis regarding D-NLC's 
+            role in the robust perceptive locomotion and self-emergent gait adaptation against complex unforeseen perturbations. This proposed control 
+            framework does not require any numerical optimization or weight training processes, which are time-consuming and computationally expensive.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/O39SGxDwapY?si=4KJrLbAjMFAfwsXK"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
 
 <section class="hero is-light is-small">
   <div class="hero-body">
@@ -254,60 +311,13 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            To the best of our knowledge, this framework is the first bio-inspired neural controller deployed on a distributed embedded system.
-          </p>
-          <p>
-            With relatively fewer neurons than more complex life forms, insects are still capable of producing astonishing locomotive behaviors, 
-            such as traversing diverse habitats and making rapid gait adaptations after extreme injury or autotomy. 
-            Biologists attribute this to a chain of segmental neuron clusters (ganglia) within insect nervous systems, which act as distributed, 
-            self-organizing sensorimotor control units. Inspired by the neural structure of the <i>Carausius morosus</i>, the common stick insect, 
-            this research introduces the Distributed Neural Locomotion Controller (D-NLC), a modular control framework utilizing local proprioceptive 
-            feedback to modulate joint-level Central Pattern Generator (CPG) signals to produce emergent locomotive behaviors. 
-          </p>
-          <p>
-            We implemented this framework using a modular legged robot with distributed joint-level embedded computing units and assessed its 
-            performance and behavior under various experimental settings. Based on real-world experiments, we observe an overall 31.3% average increase 
-            in curvilinear motion performance under external (terrain) and internal (amputation) perturbation compared to a centralized predefined gait controller. 
-            This difference is statistically significant (P&lt;&lt;0.05) for larger perturbations but not for single-leg amputations. Experiments with 
-            perturbation-induced leg stance duration and leg-phase-difference analysis further validated our hypothesis regarding D-NLC's 
-            role in the robust perceptive locomotion and self-emergent gait adaptation against complex unforeseen perturbations. This proposed control 
-            framework does not require any numerical optimization or weight training processes, which are time-consuming and computationally expensive.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://youtu.be/O39SGxDwapY?si=WZAB0DWUGHOqbXBu"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
 
     <div class="columns is-centered">
 
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">Flat Ground Walking</h2>
           <p>
             Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
             would be impossible without nerfies since it would require going through a wall.
@@ -322,7 +332,7 @@
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h2 class="title is-3">Terrain Walking</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
@@ -343,7 +353,7 @@
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">Amputation</h2>
 
         <!-- Interpolating. -->
         <h3 class="title is-4">Interpolating states</h3>
