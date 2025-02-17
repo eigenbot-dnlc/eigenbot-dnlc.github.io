@@ -3,10 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
+      content="EigenBot is a bio-inspired Distributed Neural Locomotion Controller (D-NLC) designed for robust locomotion and emergent behaviors in modular legged robots.">
+  <meta name="keywords" content="EigenBot, biorobotics, legged robots, neural locomotion control, bio-inspired robotics, distributed neural control, modular robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EigenBot Research Team">
+  <meta property="og:title" content="EigenBot - Distributed Neural Locomotion Controller (D-NLC)">
+  <meta property="og:description" content="Bio-inspired neural controller for robust locomotion in legged robots.">
+  <meta property="og:image" content="https://eigenbot-dnlc.github.io/static/images/dnlc-favicon.png">
+  <meta property="og:url" content="https://eigenbot-dnlc.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>EigenBot: Bio-Inspired Distributed Neural Locomotion Controller for Legged Robots</title>
+
+  <!-- <meta charset="utf-8">
+  <meta name="description"
         content="EigenBot Distributed Neural Locomotion Controller (D-NLC)">
   <meta name="keywords" content="eigenbot, biorobotics lab, eigenbot dnlc, distributed neural locomotion control, distributed neural control">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>D-NLC Distributed Neural Locomotion Controller</title>
+  <title>D-NLC Distributed Neural Locomotion Controller</title> -->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -32,7 +46,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/dnlc-favicon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -44,15 +58,16 @@
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+    <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"> -->
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
+  <div id="navbarMenu" class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://eigenbot-dnlc.github.io/">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -82,6 +97,19 @@
   </div>
 </nav>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navbarBurgers = document.querySelectorAll('.navbar-burger');
+  navbarBurgers.forEach(burger => {
+    burger.addEventListener('click', () => {
+      const target = document.getElementById(burger.dataset.target);
+      burger.classList.toggle('is-active');
+      target.classList.toggle('is-active');
+    });
+  });
+});
+</script>
+
 
 <section class="hero">
   <div class="hero-body">
@@ -98,7 +126,7 @@
               <a href="https://kenryhou2.github.io/">Henry Kou</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="">Ishayu Shikhare</a><sup>2</sup>,
+              <a href="https://www.linkedin.com/in/ishikhar/">Ishayu Shikhare</a><sup>2</sup>,
             </span>
             <span class="author-block">
               <a href="https://www.ri.cmu.edu/ri-faculty/howie-choset/">Howie Choset</a><sup>3</sup>,
@@ -151,7 +179,7 @@
               </span>
               <!-- Code Link. TODO--> 
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/eigenbot-dnlc/eigenbot-dnlc"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -181,10 +209,14 @@
   <!-- Paper video. -->
   <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-      <h2 class="title is-3">Video</h2>
+      <h2 class="title is-3">ICRA 25 Video</h2>
       <div class="publication-video">
         <iframe src="https://www.youtube.com/embed/O39SGxDwapY?si=4KJrLbAjMFAfwsXK"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen width="560" height="315"></iframe>
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen 
+                style="width: 100%; height: 315px;"
+        ></iframe>
       </div>
     </div>
   </div>
@@ -319,12 +351,15 @@
         <div class="content">
           <h2 class="title is-3">Flat Ground Walking</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            EigenBot achieves stable flat walking using its Distributed Neural Locomotion Controller (D-NLC), 
+            leveraging proprioceptive feedback and joint-level CPG modulation for smooth, adaptive movement. 
+            It maintains a consistent tripod-like gait, optimizing efficiency without predefined motion patterns. 
+            This decentralized control enables robust and responsive locomotion, closely resembling biological walking behaviors.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
+          <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/terrain.mp4"
                     type="video/mp4">
+            <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
           </video>
         </div>
       </div>
@@ -336,12 +371,15 @@
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
+              EigenBot navigates uneven terrain by dynamically adjusting leg coordination through D-NLC.
+              Unlike flat walking, terrain traversal induces longer stance phases and adaptive gait shifts, 
+              improving stability on slopes and rough surfaces. This emergent behavior allows EigenBot to 
+              maintain forward motion without additional programming or optimization.
             </p>
             <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
+              <source src="./static/videos/terrain.mp4"
                       type="video/mp4">
+              <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
             </video>
           </div>
 
@@ -351,12 +389,12 @@
     <!--/ Matting. -->
 
     <!-- Animation. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Amputation</h2>
+        <h2 class="title is-3">Amputation</h2> -->
 
         <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <!-- <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
             We can also animate the scene by interpolating the deformation latent codes of two input
@@ -386,11 +424,11 @@
             <p class="is-bold">End Frame</p>
           </div>
         </div>
-        <br/>
+        <br/> -->
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
           <p>
             Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
@@ -404,10 +442,10 @@
                  preload
                  playsinline
                  width="75%">
-            <source src="./static/videos/replay.mp4"
+            <source src="./static/videos/terrain.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <!--/ Re-rendering. -->
 
       </div>
@@ -416,7 +454,7 @@
 
 
     <!-- Concurrent Work. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -439,7 +477,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Concurrent Work. -->
 
   </div>
@@ -449,11 +487,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{zhang2025dnlc,
+  author    = {Zhang, Guo, Kou, Shikhare, Choset, Li},
+  title     = {Bio-inspired Distributed Neural Locomotion Controller (D-NLC) for Robust Locomotion and Emergent Behaviors},
+  journal   = {ICRA},
+  year      = {2025},
 }</code></pre>
   </div>
 </section>
@@ -466,7 +504,7 @@
          href="./static/videos/nerfies_paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link external-link" href="https://github.com/eigenbot-dnlc/eigenbot-dnlc">
         <i class="fab fa-github"></i>
       </a>
     </div>
