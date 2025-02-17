@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/2011.12948" 
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -156,9 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
                   </span>
                   <span>Paper</span>
                 </a>
-              </span>
+              </span> -->
               <!-- TODO -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/abs/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Video Link. -->
               <span class="link-block">
                 <a href="https://youtu.be/O39SGxDwapY?si=WZAB0DWUGHOqbXBu"
@@ -350,10 +350,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="content">
           <h2 class="title is-3">Flat Ground Walking</h2>
           <p>
-            EigenBot achieves stable flat walking using its Distributed Neural Locomotion Controller (D-NLC), 
-            leveraging proprioceptive feedback and joint-level CPG modulation for smooth, adaptive movement. 
-            It maintains a consistent tripod-like gait, optimizing efficiency without predefined motion patterns. 
-            This decentralized control enables robust and responsive locomotion, closely resembling biological walking behaviors.
+            EigenBot achieves stable flat walking using its Distributed Neural Locomotion Controller (D-NLC),
+            leveraging proprioceptive feedback and joint-level CPG modulation for smooth, adaptive movement.
+            It maintains a consistent tripod-like gait, optimizing efficiency without predefined motion patterns.
+            This decentralized control enables robust and responsive locomotion, closely resembling biological walking.
           </p>
           <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/terrain.mp4"
@@ -370,10 +370,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              EigenBot navigates uneven terrain by dynamically adjusting leg coordination through D-NLC.
-              Unlike flat walking, terrain traversal induces longer stance phases and adaptive gait shifts, 
-              improving stability on slopes and rough surfaces. This emergent behavior allows EigenBot to 
-              maintain forward motion without additional programming or optimization.
+              EigenBot traverses uneven terrain by dynamically adjusting stance duration and gait coordination,
+              allowing for stable locomotion over slopes, obstacles, and unpredictable surfaces.
+              Longer stance phases improve balance, while emergent interlimb adaptations prevent instability.
+              This self-organized response ensures continuous movement without external intervention or reprogramming.
             </p>
             <video id="matting-video" controls playsinline height="100%">
               <source src="./static/videos/terrain.mp4"
