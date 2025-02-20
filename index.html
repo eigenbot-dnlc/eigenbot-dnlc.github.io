@@ -350,7 +350,9 @@ document.addEventListener('DOMContentLoaded', () => {
           <h2 class="title is-3">Bioinspiration</h2>
           <p>
             EigenBot’s Distributed Neural Locomotion Controller (D-NLC) is inspired by the common stick insect, 
-            which relies on decentralized neural networks for adaptive locomotion.
+            which relies on neural networks for adaptive locomotion. D-NLC interlimb and intralimb coordination rules mimic biological proprioceptive feedback, 
+            dynamically adjusting gait based on sensory input. By implementing these neural principles, 
+            EigenBot achieves self-organized, robust locomotion without predefined motion patterns.
           </p>
           <video autoplay controls muted loop playsinline width="100%">
             <source src="./static/videos/bioinspired.mp4" type="video/mp4">
@@ -361,7 +363,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="column">
         <h2 class="title is-3">Flat Ground Walking</h2>
         <p>
-          EigenBot achieves stable flat walking using D-NLC, leveraging proprioceptive feedback for smooth movement.
+          EigenBot achieves stable flat walking using D-NLC,
+leveraging proprioceptive feedback and joint-level CPG modulation for smooth, adaptive movement.
+It maintains a consistent tripod-like gait, optimizing efficiency without predefined motion patterns.
+This decentralized control enables robust and responsive locomotion, closely resembling biological walking.
         </p>
         <video autoplay controls muted loop playsinline width="100%">
           <source src="./static/videos/flat_walking.mp4" type="video/mp4">
@@ -374,7 +379,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="column">
         <h2 class="title is-3">Terrain Walking</h2>
         <p>
-          EigenBot traverses uneven terrain by dynamically adjusting stance duration and gait coordination.
+          EigenBot traverses uneven terrain by dynamically adjusting stance duration and gait coordination,
+allowing for stable locomotion over slopes, obstacles, and unpredictable surfaces.
+Longer stance phases improve balance, while emergent interlimb adaptations prevent instability.
+This self-organized response ensures continuous movement without external intervention or reprogramming.
         </p>
         <video autoplay controls muted loop playsinline width="100%">
           <source src="./static/videos/terrain.mp4" type="video/mp4">
@@ -385,6 +393,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2 class="title is-3">Amputation</h2>
         <p>
           D-NLC enables self-organized gait recovery by dynamically adjusting interlimb coordination after limb loss.
+Redistributing proprioceptive influences, it extends stance phases and shifts phase relationships for balance.
+This often results in a trotting-like gait, optimizing stability and forward motion.
+The adaptive response ensures smooth locomotion even with significant limb perturbations.
         </p>
         <video autoplay controls muted loop playsinline width="100%">
           <source src="./static/videos/amputation_figure_frames.mp4" type="video/mp4">
@@ -397,7 +408,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="column">
         <h2 class="title is-3">Neural Heading Control</h2>
         <p>
-          Inspired by insect locomotion, D-NLC facilitates curve walking through a modular neuron integrated into the ThC joint network.
+          Inspired by insect locomotion, D-NLC facilitates curve walking by integrating a modular neuron into the ThC joint network.
+This neuron modifies the inner middle leg’s movement, allowing it to switch from forward to backward or sideways motion.
+Upon activation, it reverses leg direction or adjusts protractor-retractor range for precise turns.
+Tested in simulation, this adaptation ensures agile and controllable navigation in varied environments.
         </p>
         <video autoplay controls muted loop playsinline width="100%">
           <source src="./static/videos/curve_walking.mp4" type="video/mp4">
@@ -407,7 +421,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="column">
         <h2 class="title is-3">Modularity</h2>
         <p>
-          EigenBot’s modular design allows flexible reconfiguration, minimizing cost and complexity while enabling specialized tasks.
+          EigenBot’s modular design allows flexible reconfiguration, minimizing cost and complexity while enabling specialized tasks. 
+          Developed by the CMU Biorobotics Lab, its EigenBus communication protocol ensures real-time distributed control. 
+          Each module features onboard sensors, a microcontroller, and a tool-less octo-indent interface for rapid deployment. 
+          This modularity makes it ideal for distributed embedded control.
         </p>
         <video autoplay controls muted loop playsinline width="100%">
           <source src="./static/videos/eigenbot_assembly_8x.mp4" type="video/mp4">
