@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
             This decentralized control enables robust and responsive locomotion, closely resembling biological walking.
           </p>
           <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/terrain.mp4"
+            <source src="./static/videos/flat_walking.mp4"
                     type="video/mp4">
             <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
           </video>
@@ -385,6 +385,51 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
     </div>
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Amputation</h2>
+          <p>
+            D-NLC enables self-organized gait recovery by dynamically adjusting interlimb coordination after limb loss.
+            Redistributing proprioceptive influences, it extends stance phases and shifts phase relationships for balance.
+            This often results in a trotting-like gait, optimizing stability and forward motion.
+            The adaptive response ensures smooth locomotion even with significant limb perturbations.
+          </p>
+          <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/amputation_figure_frames.mp4"
+                    type="video/mp4">
+            <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-3">Curve Walking</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              Inspired by insect locomotion, D-NLC facilitates curve walking by integrating a modular neuron into the ThC joint network.
+              This neuron modifies the inner middle leg’s movement, allowing it to switch from forward to backward or sideways motion.
+              Upon activation, it reverses leg direction or adjusts protractor-retractor range for precise turns.
+              Tested in simulation, this adaptation ensures agile and controllable navigation in varied environments.
+            </p>
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/curve_walking.mp4"
+                      type="video/mp4">
+              <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    
     <!--/ Matting. -->
 
     <!-- Animation. -->
