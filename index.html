@@ -348,9 +348,26 @@ document.addEventListener('DOMContentLoaded', () => {
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
+          <h2 class="title is-3">Bioinspiration</h2>
+          <p>
+            EigenBot’s Distributed Neural Locomotion Controller (D-NLC) is inspired by the common stick insect, 
+            which relies on decentralized neural networks for adaptive locomotion. Its interlimb and intralimb 
+            coordination rules mimic biological proprioceptive feedback, dynamically adjusting gait based on sensory input. 
+            By implementing these neural principles, EigenBot achieves self-organized, adaptable locomotion without predefined motion patterns.
+          </p>
+          <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/bioinspired.mp4"
+                    type="video/mp4">
+            <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
           <h2 class="title is-3">Flat Ground Walking</h2>
           <p>
-            EigenBot achieves stable flat walking using its Distributed Neural Locomotion Controller (D-NLC),
+            EigenBot achieves stable flat walking using D-NLC,
             leveraging proprioceptive feedback and joint-level CPG modulation for smooth, adaptive movement.
             It maintains a consistent tripod-like gait, optimizing efficiency without predefined motion patterns.
             This decentralized control enables robust and responsive locomotion, closely resembling biological walking.
@@ -375,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
               Longer stance phases improve balance, while emergent interlimb adaptations prevent instability.
               This self-organized response ensures continuous movement without external intervention or reprogramming.
             </p>
-            <video id="matting-video" controls muted loop playsinline height="100%">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/terrain.mp4"
                       type="video/mp4">
               <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
@@ -409,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Curve Walking</h2>
+        <h2 class="title is-3">Neural Heading Control</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
@@ -418,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
               Upon activation, it reverses leg direction or adjusts protractor-retractor range for precise turns.
               Tested in simulation, this adaptation ensures agile and controllable navigation in varied environments.
             </p>
-            <video id="matting-video" controls muted loop playsinline height="100%">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/curve_walking.mp4"
                       type="video/mp4">
               <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
@@ -429,7 +446,79 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
 
-    
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Modularity</h2>
+          <p>
+            EigenBot’s modular design allows flexible reconfiguration, minimizing cost and complexity while enabling specialized tasks. 
+            Developed by the CMU Biorobotics Lab, its EigenBus communication protocol ensures real-time distributed control. 
+            Each module features onboard sensors, a microcontroller, and a tool-less octo-indent interface for rapid deployment. 
+            This modularity makes it ideal for distributed embedded control.
+          </p>
+          <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/eigenbot_assembly_8x.mp4"
+                    type="video/mp4">
+            <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+    <!-- Video Scrubbing (No Auto Playback) -->
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <h2 class="title is-3">Neural Activity during Locomotion - ThC Joint</h2>
+    <div class="columns is-vcentered interpolation-panel">
+      <div class="column interpolation-video-column">
+        <!-- Video Player -->
+        <div class="content has-text-centered">
+          <video id="scrub-video"
+                 preload="metadata"
+                 playsinline
+                 width="100%">
+            <source src="./static/videos/cpg_scrub.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- Scrubbing Slider -->
+        <input class="slider is-fullwidth is-large is-info"
+               id="scrub-slider"
+               step="1" min="0" max="100" value="0" type="range">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("scrub-video");
+  const slider = document.getElementById("scrub-slider");
+  
+  slider.disabled = true; // Disable slider initially
+
+  video.addEventListener("loadedmetadata", function () {
+    slider.max = 100;
+    slider.disabled = false; // Enable slider after metadata loads
+  });
+
+  slider.addEventListener("input", function () {
+    if (video.duration) {
+      video.currentTime = (slider.value / 100) * video.duration;
+    }
+  });
+
+  video.addEventListener("seeking", function () {
+    video.pause();
+  });
+
+  video.addEventListener("play", function () {
+    video.pause();
+  });
+});
+
+</script>
     <!--/ Matting. -->
 
     <!-- Animation. -->
@@ -497,33 +586,6 @@ document.addEventListener('DOMContentLoaded', () => {
     <!--/ Animation. -->
 
 
-    <!-- Concurrent Work. -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
@@ -560,13 +622,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-          <p>
+          <!-- <p>
             This means you are free to borrow the <a
               href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
             we just ask that you link back to this page in the footer.
             Please remember to remove the analytics code included in the header of the website which
             you do not want on your website.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
