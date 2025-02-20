@@ -343,150 +343,91 @@ document.addEventListener('DOMContentLoaded', () => {
 <section class="section">
   <div class="container is-max-desktop">
 
+    <!-- Row 1: Bioinspiration & Flat Walking -->
     <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
           <h2 class="title is-3">Bioinspiration</h2>
           <p>
             EigenBot’s Distributed Neural Locomotion Controller (D-NLC) is inspired by the common stick insect, 
-            which relies on decentralized neural networks for adaptive locomotion. Its interlimb and intralimb 
-            coordination rules mimic biological proprioceptive feedback, dynamically adjusting gait based on sensory input. 
-            By implementing these neural principles, EigenBot achieves self-organized, adaptable locomotion without predefined motion patterns.
+            which relies on decentralized neural networks for adaptive locomotion.
           </p>
-          <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/bioinspired.mp4"
-                    type="video/mp4">
-            <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
+          <video autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/bioinspired.mp4" type="video/mp4">
           </video>
         </div>
       </div>
 
       <div class="column">
         <h2 class="title is-3">Flat Ground Walking</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              EigenBot achieves stable flat walking using D-NLC,
-            leveraging proprioceptive feedback and joint-level CPG modulation for smooth, adaptive movement.
-            It maintains a consistent tripod-like gait, optimizing efficiency without predefined motion patterns.
-            This decentralized control enables robust and responsive locomotion, closely resembling biological walking.
-            </p>
-            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/flat_walking.mp4s"
-                      type="video/mp4">
-              <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
-            </video>
-          </div>
-
-        </div>
+        <p>
+          EigenBot achieves stable flat walking using D-NLC, leveraging proprioceptive feedback for smooth movement.
+        </p>
+        <video autoplay controls muted loop playsinline width="100%">
+          <source src="./static/videos/flat_walking.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
-    
+
+    <!-- Row 2: Terrain Walking & Amputation -->
     <div class="columns is-centered">
       <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Terrain Walking</h2>
-          <p>
-            EigenBot traverses uneven terrain by dynamically adjusting stance duration and gait coordination,
-              allowing for stable locomotion over slopes, obstacles, and unpredictable surfaces.
-              Longer stance phases improve balance, while emergent interlimb adaptations prevent instability.
-              This self-organized response ensures continuous movement without external intervention or reprogramming.
-          </p>
-          <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/terrain.mp4"
-                    type="video/mp4">
-            <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
-          </video>
-        </div>
+        <h2 class="title is-3">Terrain Walking</h2>
+        <p>
+          EigenBot traverses uneven terrain by dynamically adjusting stance duration and gait coordination.
+        </p>
+        <video autoplay controls muted loop playsinline width="100%">
+          <source src="./static/videos/terrain.mp4" type="video/mp4">
+        </video>
       </div>
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
       <div class="column">
         <h2 class="title is-3">Amputation</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              D-NLC enables self-organized gait recovery by dynamically adjusting interlimb coordination after limb loss.
-            Redistributing proprioceptive influences, it extends stance phases and shifts phase relationships for balance.
-            This often results in a trotting-like gait, optimizing stability and forward motion.
-            The adaptive response ensures smooth locomotion even with significant limb perturbations.
-            </p>
-            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/amputation_figure_frames.mp4"
-                      type="video/mp4">
-              <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
-            </video>
-          </div>
-
-        </div>
+        <p>
+          D-NLC enables self-organized gait recovery by dynamically adjusting interlimb coordination after limb loss.
+        </p>
+        <video autoplay controls muted loop playsinline width="100%">
+          <source src="./static/videos/amputation_figure_frames.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
 
+    <!-- Row 3: Neural Heading Control & Modularity -->
     <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
       <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Neural Heading Control</h2>
-          <p>
-            Inspired by insect locomotion, D-NLC facilitates curve walking by integrating a modular neuron into the ThC joint network.
-              This neuron modifies the inner middle leg’s movement, allowing it to switch its heading.
-              Upon activation, it reverses leg direction or adjusts protractor-retractor range for precise turns.
-              Tested in simulation, this adaptation ensures agile and controllable navigation in varied environments.
-          </p>
-          <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/curve_walking.mp4"
-                    type="video/mp4">
-            <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
-          </video>
-        </div>
+        <h2 class="title is-3">Neural Heading Control</h2>
+        <p>
+          Inspired by insect locomotion, D-NLC facilitates curve walking through a modular neuron integrated into the ThC joint network.
+        </p>
+        <video autoplay controls muted loop playsinline width="100%">
+          <source src="./static/videos/curve_walking.mp4" type="video/mp4">
+        </video>
       </div>
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
       <div class="column">
         <h2 class="title is-3">Modularity</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              EigenBot’s modular design allows flexible reconfiguration, minimizing cost and complexity while enabling specialized tasks. 
-            Developed by the CMU Biorobotics Lab, its EigenBus communication protocol ensures real-time distributed control. 
-            Each module features onboard sensors, a microcontroller, and a tool-less octo-indent interface for rapid deployment. 
-            This modularity makes it ideal for distributed embedded control.
-            </p>
-            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/eigenbot_assembly_8x.mp4"
-                      type="video/mp4">
-              <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
-            </video>
-          </div>
-
-        </div>
+        <p>
+          EigenBot’s modular design allows flexible reconfiguration, minimizing cost and complexity while enabling specialized tasks.
+        </p>
+        <video autoplay controls muted loop playsinline width="100%">
+          <source src="./static/videos/eigenbot_assembly_8x.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
 
+    <!-- Row 4: Scrubbing Video (Full Width) -->
     <div class="columns is-centered">
-
-    <!-- Video Scrubbing (No Auto Playback) -->
-<div class="columns is-centered">
-  <div class="column is-full-width">
-    <h2 class="title is-3">Single Limb Neural Activity during Locomotion</h2>
-    <p class="has-text-centered is-size-5">
-      Slide the scrubber to view CPG activity and neuron activations during gait cycles of leg R1.
-    </p>
-    <div class="columns is-vcentered interpolation-panel">
-      <div class="column interpolation-video-column">
-        <!-- Video Player -->
+      <div class="column is-full-width">
+        <h2 class="title is-3">Single Limb Neural Activity during Locomotion</h2>
+        <p class="has-text-centered is-size-5">
+          Slide the scrubber to view CPG activity and neuron activations during gait cycles of leg R1.
+        </p>
         <div class="content has-text-centered">
-          <video id="scrub-video"
-                 preload="metadata"
-                 playsinline
-                 width="100%">
+          <video id="scrub-video" preload="metadata" playsinline width="100%">
             <source src="./static/videos/cpg_scrub.mp4" type="video/mp4">
           </video>
         </div>
+
         <!-- Scrubbing Slider -->
         <input class="slider is-fullwidth is-large is-info"
                id="scrub-slider"
@@ -494,105 +435,35 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-  const video = document.getElementById("scrub-video");
-  const slider = document.getElementById("scrub-slider");
+    const video = document.getElementById("scrub-video");
+    const slider = document.getElementById("scrub-slider");
   
-  slider.disabled = true; // Disable slider initially
+    slider.disabled = true; // Disable slider initially
 
-  video.addEventListener("loadedmetadata", function () {
-    slider.max = 100;
-    slider.disabled = false; // Enable slider after metadata loads
+    video.addEventListener("loadedmetadata", function () {
+      slider.max = 100;
+      slider.disabled = false; // Enable slider after metadata loads
+    });
+
+    slider.addEventListener("input", function () {
+      if (video.duration) {
+        video.currentTime = (slider.value / 100) * video.duration;
+      }
+    });
+
+    video.addEventListener("seeking", function () {
+      video.pause();
+    });
+
+    video.addEventListener("play", function () {
+      video.pause();
+    });
   });
-
-  slider.addEventListener("input", function () {
-    if (video.duration) {
-      video.currentTime = (slider.value / 100) * video.duration;
-    }
-  });
-
-  video.addEventListener("seeking", function () {
-    video.pause();
-  });
-
-  video.addEventListener("play", function () {
-    video.pause();
-  });
-});
-
 </script>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Amputation</h2> -->
-
-        <!-- Interpolating. -->
-        <!-- <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/> -->
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/terrain.mp4"
-                    type="video/mp4">
-          </video>
-        </div> -->
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-  </div>
-</section>
 
 
 <section class="section" id="BibTeX">
