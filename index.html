@@ -364,59 +364,36 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Flat Ground Walking</h2>
-          <p>
-            EigenBot achieves stable flat walking using D-NLC,
+        <h2 class="title is-3">Flat Ground Walking</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              EigenBot achieves stable flat walking using D-NLC,
             leveraging proprioceptive feedback and joint-level CPG modulation for smooth, adaptive movement.
             It maintains a consistent tripod-like gait, optimizing efficiency without predefined motion patterns.
             This decentralized control enables robust and responsive locomotion, closely resembling biological walking.
-          </p>
-          <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/flat_walking.mp4"
-                    type="video/mp4">
-            <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
-          </video>
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/flat_walking.mp4s"
+                      type="video/mp4">
+              <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
+            </video>
+          </div>
+
         </div>
       </div>
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Terrain Walking</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              EigenBot traverses uneven terrain by dynamically adjusting stance duration and gait coordination,
+        <div class="content">
+          <h2 class="title is-3">Terrain Walking</h2>
+          <p>
+            EigenBot traverses uneven terrain by dynamically adjusting stance duration and gait coordination,
               allowing for stable locomotion over slopes, obstacles, and unpredictable surfaces.
               Longer stance phases improve balance, while emergent interlimb adaptations prevent instability.
               This self-organized response ensures continuous movement without external intervention or reprogramming.
-            </p>
-            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/terrain.mp4"
-                      type="video/mp4">
-              <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Amputation</h2>
-          <p>
-            D-NLC enables self-organized gait recovery by dynamically adjusting interlimb coordination after limb loss.
-            Redistributing proprioceptive influences, it extends stance phases and shifts phase relationships for balance.
-            This often results in a trotting-like gait, optimizing stability and forward motion.
-            The adaptive response ensures smooth locomotion even with significant limb perturbations.
           </p>
           <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/amputation_figure_frames.mp4"
+            <source src="./static/videos/terrain.mp4"
                     type="video/mp4">
             <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
           </video>
@@ -426,17 +403,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Neural Heading Control</h2>
+        <h2 class="title is-3">Amputation</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              Inspired by insect locomotion, D-NLC facilitates curve walking by integrating a modular neuron into the ThC joint network.
-              This neuron modifies the inner middle leg’s movement, allowing it to switch its heading.
-              Upon activation, it reverses leg direction or adjusts protractor-retractor range for precise turns.
-              Tested in simulation, this adaptation ensures agile and controllable navigation in varied environments.
+              D-NLC enables self-organized gait recovery by dynamically adjusting interlimb coordination after limb loss.
+            Redistributing proprioceptive influences, it extends stance phases and shifts phase relationships for balance.
+            This often results in a trotting-like gait, optimizing stability and forward motion.
+            The adaptive response ensures smooth locomotion even with significant limb perturbations.
             </p>
             <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/curve_walking.mp4"
+              <source src="./static/videos/amputation_figure_frames.mp4"
                       type="video/mp4">
               <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
             </video>
@@ -451,21 +428,45 @@ document.addEventListener('DOMContentLoaded', () => {
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Modularity</h2>
+          <h2 class="title is-3">Neural Heading Control</h2>
           <p>
-            EigenBot’s modular design allows flexible reconfiguration, minimizing cost and complexity while enabling specialized tasks. 
-            Developed by the CMU Biorobotics Lab, its EigenBus communication protocol ensures real-time distributed control. 
-            Each module features onboard sensors, a microcontroller, and a tool-less octo-indent interface for rapid deployment. 
-            This modularity makes it ideal for distributed embedded control.
+            Inspired by insect locomotion, D-NLC facilitates curve walking by integrating a modular neuron into the ThC joint network.
+              This neuron modifies the inner middle leg’s movement, allowing it to switch its heading.
+              Upon activation, it reverses leg direction or adjusts protractor-retractor range for precise turns.
+              Tested in simulation, this adaptation ensures agile and controllable navigation in varied environments.
           </p>
           <video id="terrain_walking" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/eigenbot_assembly_8x.mp4"
+            <source src="./static/videos/curve_walking.mp4"
                     type="video/mp4">
             <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
           </video>
         </div>
       </div>
       <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-3">Modularity</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              EigenBot’s modular design allows flexible reconfiguration, minimizing cost and complexity while enabling specialized tasks. 
+            Developed by the CMU Biorobotics Lab, its EigenBus communication protocol ensures real-time distributed control. 
+            Each module features onboard sensors, a microcontroller, and a tool-less octo-indent interface for rapid deployment. 
+            This modularity makes it ideal for distributed embedded control.
+            </p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/eigenbot_assembly_8x.mp4"
+                      type="video/mp4">
+              <p>Your browser does not support the video tag. Watch EigenBot in action!</p>
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
 
     <!-- Video Scrubbing (No Auto Playback) -->
 <div class="columns is-centered">
